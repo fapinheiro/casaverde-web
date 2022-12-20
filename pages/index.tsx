@@ -5,9 +5,9 @@ import {
   Title,
   Description,
   CodeTag,
-} from '../components/sharedstyles'
-import Cards from '../components/cards'
-import { Customer } from '../data/Customer'
+} from '../src/components/sharedstyles'
+import Cards from '../src/components/cards'
+import { Customer } from '../src/data/Customer'
 
 export default function Home() {
   const customer = new Customer(

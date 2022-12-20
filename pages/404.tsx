@@ -5,8 +5,8 @@ import {
   Title,
   Description,
   CodeTag,
-} from '../components/sharedstyles'
-import Cards from '../components/cards'
+} from '../src/components/sharedstyles'
+import Cards from '../src/components/cards'
 
 export default function Custom404() {
   return (
