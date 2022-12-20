@@ -1,5 +1,6 @@
 import { useState } from "react"
 import styled from "styled-components"
+import { EmailService } from "../../../../src/services/EmailService"
 
 const Artigo = styled.article`
     margin-top: 4em;
@@ -89,9 +90,18 @@ export default function Newsletter() {
         }
     }
 
+    const emailService = EmailService()
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert(`Obrigado pela sua assinatura, voce receberá nossas novidades no email ${email}`);
+        emailService.sendMail('Filipe')
+            .then(() => {
+                alert(`Obrigado pela sua assinatura, voce receberá nossas novidades no email ${email}`)
+            })
+            .catch((error) => {
+                alert(`Ocorreu um erro ao enviar email de assinatura da newsletter.`)
+                console.log(error)
+            })
     }
 
     return (
